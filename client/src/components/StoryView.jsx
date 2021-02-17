@@ -5,7 +5,7 @@ import Prompt from './Prompt';
 // TODO: send a request to 'lock' story on server when user begins writing so
 //       multiple people can't write to a story at the same time
 
-export default function StoryView({ id }) {
+export default function StoryView({ id, canSubmit = true }) {
   const [currentStory, setCurrentStory] = useState({});
   const [currentSnippet, setCurrentSnippet] = useState(0);
   const [newSnippet, setNewSnippet] = useState('');
@@ -30,35 +30,39 @@ export default function StoryView({ id }) {
   }
 
   return (
-    <div>
-      {loading
-        ? <span>Loading...</span>
-        : <ul>
-            {currentStory.snippets.map((snippet, index) => (
-              <li key={index}>
-                <p>{snippet}</p>
-              </li>
-            ))}
+    <div className="story-container">
+      {!loading &&
+        <ul>
+          {currentStory.snippets.map((snippet, index) => (
+            <li
+              className="story-listitem"
+              key={index}
+            >
+              <p>{snippet}</p>
+            </li>
+          ))}
+        </ul>
+      }
+      {submitted === false && canSubmit
+        && <>
+             <textarea
+               className="story-textarea"
+               placeholder="Continue our story..."
+               cols="50"
+               rows="6"
+               value={newSnippet}
+               onChange={e => setNewSnippet(e.target.value)}
+             ></textarea>
 
-            {submitted === false
-              && <li>
-                  <textarea
-                    placeholder="Continue our story..."
-                    cols="50"
-                    rows="6"
-                    value={newSnippet}
-                    onChange={e => setNewSnippet(e.target.value)}
-                  ></textarea>
+             <button
+               className="navbutton"
+               onClick={post}
+             >
+               Submit
+             </button>
 
-                  <button onClick={post}>
-                    Submit
-                  </button>
-
-                  <Prompt />
-                </li>
-            }
-
-          </ul>
+             <Prompt />
+           </>
       }
     </div>
   );

@@ -7,12 +7,13 @@ export default function CreateView({ submitHandler }) {
 
   async function post() {
     const story = await postStory(newSnippet);
-    submitHandler(story.data);
+    submitHandler(story.data, true);
   }
 
   return (
-    <div>
+    <div className="create-container">
       <textarea
+        className="create-textarea"
         placeholder="Begin our story..."
         cols="50"
         rows="6"
@@ -20,7 +21,10 @@ export default function CreateView({ submitHandler }) {
         onChange={e => setNewSnippet(e.target.value)}
       ></textarea>
 
-      <button onClick={post}>
+      <button
+        className="navbutton"
+        onClick={post}
+      >
         Submit
       </button>
 
