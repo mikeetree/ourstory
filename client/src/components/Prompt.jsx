@@ -10,9 +10,14 @@ export default function Prompt() {
   }
 
   return (
-    <div>
+    <div className="prompt-container">
       <span>{prompt}</span>
-      <button onClick={updatePrompt}>Prompt</button>
+      <button
+        className="navbutton"
+        onClick={updatePrompt}
+      >
+        Prompt
+      </button>
     </div>
   );
 }

@@ -12,12 +12,16 @@ export default function PreviewsView({ textLength, clickHandler }) {
     }
   }, []);
 
-  const listItems = previews.map(preview => (
-    <li key={preview.storyId} onClick={() => clickHandler(preview.storyId)}>
+  const listItems = previews.reverse().map(preview => (
+    <li
+      key={preview.storyId}
+      className="preview-listitem"
+      onClick={() => clickHandler(preview.storyId)}
+    >
 
-      <p>{preview.firstSnippet.split(' ').slice(0, textLength).join(' ')}...</p>
+      <span>{preview.firstSnippet.split(' ').slice(0, textLength).join(' ')}...</span>
 
-      <span>Length: {preview.storyLength} ID: {preview.storyId}</span>
+      <span className="preview-length">{preview.storyLength}</span>
 
     </li>
   ));

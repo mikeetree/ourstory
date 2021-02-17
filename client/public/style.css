@@ -1,4 +1,128 @@
 body {
-  background-color: darkslategrey;
+  background-color: black;
   color: white;
+}
+
+.app-container {
+  margin: auto;
+  margin-top: 50px;
+  width: 800px;
+  height: 80%;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.title-view {
+  color:rgba(128, 128, 128, 0.418);
+  font-size: 180px;
+  margin-left: 40px;
+  margin-top: 200px;
+}
+
+.title-view:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.navbutton {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  outline: none;
+  width: 100px;
+  height: 40px;
+  margin-left: 40px;
+}
+
+.navbutton:hover {
+  border-color: white;
+  color: white;
+  cursor: pointer;
+}
+
+.preview-listitem {
+  color: lightgray;
+  border: 1px solid rgba(128, 128, 128, 0);
+  padding: 10px 5px;
+  list-style: none;
+  margin-top: 20px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-listitem:hover {
+  color: white;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.preview-length {
+  color: lightgray;
+  margin-right: 10px;
+}
+
+.create-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-flow: column;
+  align-items: center;
+}
+
+.create-textarea {
+  background-color: black;
+  color: white;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  outline: none;
+  resize: none;
+  width: 400px;
+  margin-top: 40px;
+}
+
+.create-container > .navbutton {
+  margin-top: 10px;
+  margin-left: 307px;
+}
+
+.prompt-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.prompt-container > .navbutton {
+  margin-top: 40px;
+}
+
+.story-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-flow: column;
+  align-items: center;
+}
+
+.story-listitem {
+  color: white;
+  padding: 5px;
+  list-style: none;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.story-textarea {
+  background-color: black;
+  color: white;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  outline: none;
+  resize: none;
+  width: 400px;
+  margin-top: 40px;
+}
+
+.story-container > .navbutton {
+  margin-top: 10px;
+  margin-left: 307px;
 }
