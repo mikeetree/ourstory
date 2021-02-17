@@ -30,6 +30,13 @@ export default function App() {
 
   return (
     <div>
+      {currentView !== 'previews' &&
+        <div>
+          <button onClick={() => setCurrentView('previews')}>
+            &lt; Back
+          </button>
+        </div>
+      }
 
       {view}
 

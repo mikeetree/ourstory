@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { postStory } from '../requests';
+import Prompt from './Prompt';
 
 export default function CreateView({ submitHandler }) {
   const [newSnippet, setNewSnippet] = useState('');
@@ -22,6 +23,8 @@ export default function CreateView({ submitHandler }) {
       <button onClick={post}>
         Submit
       </button>
+
+      <Prompt />
     </div>
   );
 }
