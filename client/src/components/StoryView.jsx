@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getStory, appendStory } from '../requests';
+import Prompt from './Prompt';
 
 // TODO: send a request to 'lock' story on server when user begins writing so
 //       multiple people can't write to a story at the same time
@@ -52,6 +53,8 @@ export default function StoryView({ id }) {
                   <button onClick={post}>
                     Submit
                   </button>
+
+                  <Prompt />
                 </li>
             }
 
