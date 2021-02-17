@@ -1,5 +1,5 @@
 const express = require('express');
-const Story = require('../database/story');
+const Story = require('../../database/story');
 
 const api = express.Router();
 
